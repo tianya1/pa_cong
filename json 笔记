@@ -1,0 +1,14 @@
+str转换 encode decode
+
+s='这个'
+str1=s.encode('utf-8')
+print(str1)
+print(str1.decode('utf-8'))
+
+#utf-8 gb2312 unicode
+
+
+json
+dumps()  将python数据类型转换为json格式的字符串
+loads()  将json格式的字符串转换为python的类型
+json模块不支持bytes类型，要先将bytes转换为str格式
