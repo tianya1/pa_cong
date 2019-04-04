@@ -1,0 +1,5 @@
+更多chromedriver版本可在：http://chromedriver.storage.googleapis.com/index.html下载
+
+
+解压后放在类似：
+D:\Python35\Scripts
