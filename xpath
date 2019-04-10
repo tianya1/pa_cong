@@ -1,0 +1,26 @@
+xpath 两种用法
+
+1.文件读取
+from lxml import etree
+html = etree.parse('./test.html', etree.HTMLParser())
+result = html.xpath('//ul/a')
+
+2.直接读取字符串解析
+
+import requests
+from bs4 import BeautifulSoup
+from lxml import etree
+reslis=[]
+def content(url):
+    url='https://movie.douban.com/subject/26861685/comments?start=200&limit=20&sort=new_score&status=P'
+    res=requests.get(url)
+    html = etree.HTML(res.text)
+    comment=html.xpath('//div[@class="comment"]//p/span/text()')
+    reslis.append(comment)
+    
+def main():
+    for i in range(11):
+        url='https://movie.douban.com/subject/26861685/comments?start='+str(i*20)+'&limit=20&sort=new_score&status=P'
+        content(url)
+main()
+reslis
